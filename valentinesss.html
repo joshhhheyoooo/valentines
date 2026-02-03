@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Perfect Valentine!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffb6c1, #ffc0cb);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        h1, h2 {
+            color: #ff1493;
+            font-family: 'Courier New', monospace;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .heart {
+            font-size: 2em;
+            color: #ff69b4;
+        }
+        button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+            position: relative;
+        }
+        button:hover {
+            background: #ff1493;
+        }
+        .message-box {
+            position: relative;
+            background: #ffe4e1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: none;
+        }
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: none;
+            color: #ff1493;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .reveal {
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        input[type="range"] {
+            width: 80%;
+            margin: 20px 0;
+        }
+        #love-meter-result {
+            font-weight: bold;
+            color: #ff1493;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .poem {
+            white-space: pre-line;
+            text-align: center;
+        }
+        .confession {
+            text-align: justify;
+            text-align-last: center;
+        }
+    </style>
+</head>
+<body onload="updateLoveMeter()">
+    <div class="container">
+        <h1>Happy Valentine's Day! <span class="heart">❤️</span></h1>
+        <img src="https://media.tenor.com/lCs1cxTz2ywAAAAm/chibi-anime.webp" alt="Floating hearts GIF" width="150">
+        <p>I've created this little site just for you. Let's click around babiii and see what happens hshshsh</p>
+        
+        <h2>My Confession</h2>
+        <p class="confession">Hi babii I'll be formal and honest with you muna hshssh.
+I actually liked you from the first time we talked and i know alam mo rin na yan hshshs.  I know it didn't start as something serious—just a simple conversation, a joke about asking you how good are you at playing ml—but somehoww the way we talked felt easy and genuine. And that stayed with me actually babi.
+When I asked if you can carry, I was half-joking, but I was also curious about you na at that time. From there, I found myself wanting to talk to you more, knowing you better, and choosing you without forcing anything.
+I didn’t rush this feeling, and I didn’t say it lightly. I just reached a point where I wanted to be honest instead of keeping it to myself. (learned from my past hshsh)
+No pressure bailbi or expectations—I just wanted you to know where I stand omkiii?</p>
+        
+        <button onclick="revealMessage(1)">Why I Like You #1</button>
+        <button onclick="revealMessage(2)">Why I Like You #2</button>
+        <button onclick="revealMessage(3)">Why I Like You #3</button>
+        
+        <div id="message1" class="message-box">
+            <button class="close-btn" onclick="closeMessage(1)">×</button>
+            <p class="reveal">You're such a cutie patootiee hshsh</p>
+            <img src="https://media1.tenor.com/m/r5CFoxv1UCIAAAAC/my-dress-up-darling-anime-girl-blushing.gif" alt="Smiling face GIF" width="100">
+        </div>
+        <div id="message2" class="message-box">
+            <button class="close-btn" onclick="closeMessage(2)">×</button>
+            <p class="reveal">[Eepy headddd]</p>
+            <img src="https://media1.tenor.com/m/rh3rlaZgAn4AAAAC/cat-funny.gif" alt="Laughing GIF" width="100">
+        </div>
+        <div id="message3" class="message-box">
+            <button class="close-btn" onclick="closeMessage(3)">×</button>
+            <p class="reveal">I really like how mature you are babii</p>
+            <img src="https://media1.tenor.com/m/Hy-KN1Vg1BIAAAAC/girl-anime.gif" alt="Adventure GIF" width="100">
+        </div>
+        
+        <h2>Love Meter</h2>
+        <p>Slide to rate how much you feel the love!</p>
+        <input type="range" id="love-slider" min="0" max="100" value="50" oninput="updateLoveMeter()">
+        <p id="love-meter-result">50% - Warming up, just like your smile! 🔥</p>
+        
+        <!-- Updated Poem/Quote Section with Images -->
+        <h2>A Special Memory</h2>
+        <p>Here's something that reminds me of us:</p>
+        <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0;">
+            <img src="5f762d0c-878d-4c27-bfd2-363154918bff.png" alt="Your image" style="border-radius: 50%; margin: 0 10px; width: 150px; height: 150px;">
+            <span style="font-size: 2em; color: #ff1493;">❤️</span>
+            <img src="c221eb4f-6c01-4a64-aca0-73d4ded21db3.png" alt="Her image" style="border-radius: 50%; margin: 0 10px; width: 150px; height: 150px;">
+        </div>
+        <p class="reveal poem">There was no rush,
+just moments stacking gently—
+laughter between messages,
+comfort hiding in ordinary words.
+I noticed how you exist without noise,
+how care shows up in the smallest ways,
+how being around you feels like rest, not effort.
+If this sounds simple, it’s because it is.
+You didn’t arrive like a storm—
+you arrived like something I didn’t know I was waiting for.</p>
+        <p>- From your good boy, Josh</p>
+        
+        <h2>Will You Be My Valentine?</h2>
+        <button onclick="sayYes()">Yes!</button>
+        <button id="no-btn" onmouseover="dodgeNo()">No</button>
+        
+        <div id="yes-page" class="hidden">
+            <h2>Yay! 💖</h2>
+            <img src="https://media.tenor.com/PgRLJjl8iSEAAAAi/love-neko.gif" alt="Celebration GIF" width="200">
+            <p>Here's an idea for our first date: whenever our first date goes as long as I'm with you hshsh (wala lang talga yan siya maisip)</p>
+            <p>Kidding, I'll be waiting for your answer in messenger hshshs</p>
+        </div>
+        <div id="no-page" class="hidden">
+            <h2>No Worries! 😊</h2>
+            <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Friendly GIF" width="150">
+            <p>I'm glad we're friends. Let's keep the good times going.</p>
+        </div>
+    </div>
+
+    <script>
+        function revealMessage(num) {
+            const msg = document.getElementById('message' + num);
+            msg.style.display = 'block';
+        }
+        
+        function closeMessage(num) {
+            const msg = document.getElementById('message' + num);
+            msg.style.display = 'none';
+        }
+        
+        function updateLoveMeter() {
+            const slider = document.getElementById('love-slider');
+            const result = document.getElementById('love-meter-result');
+            const value = slider.value;
+            if (value < 20) result.textContent = value + "% - Still getting to know each other";
+            else if (value < 40) result.textContent = value + "% - Flirty and Comfortable conversations ";
+            else if (value < 60) result.textContent = value + "% - Choosing each other more often ";
+            else if (value < 70) result.textContent = value + "% - Inside jokes unlocked ";
+            else if (value < 80) result.textContent = value + "% - You're my favorite person!";
+            else if (value < 90) result.textContent = value + "% - My safe place";
+            else if (value < 95) result.textContent = value + "% - Us > everything else";
+            else result.textContent = value + "% - Whenerver life takes us, we go together babiii";
+        }
+        
+        function sayYes() {
+            console.log('Yes button clicked');
+            document.getElementById('yes-page').classList.remove('hidden');
+            document.getElementById('no-page').classList.add('hidden');
+            document.getElementById('no-btn').style.display = 'none'; // Hide the No button
+        }
+        
+        function dodgeNo() {
+            const btn = document.getElementById('no-btn');
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = btn.getBoundingClientRect();
+            
+            // Random position within container
+            const maxX = containerRect.width - btnRect.width;
+            const maxY = containerRect.height - btnRect.height;
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            btn.style.position = 'absolute';
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
